@@ -8,7 +8,8 @@ class Api::V1::PostersController < ApplicationController
   def show
     poster = Poster.find(params[:id])
     render json: poster
-
+  end
+  
   def create
     render json: Poster.create(poster_params)
   end
