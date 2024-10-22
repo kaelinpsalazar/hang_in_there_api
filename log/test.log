@@ -118,3 +118,152 @@ Processing by Api::V1::PostersController#index as HTML
   [1m[36mPoster Load (0.4ms)[0m  [1m[34mSELECT "posters".* FROM "posters"[0m
 Completed 200 OK in 5ms (Views: 0.5ms | ActiveRecord: 0.4ms (1 query, 0 cached) | GC: 0.1ms)
   [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.9ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "schema_sha1"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPoster Create (2.5ms)[0m  [1m[32mINSERT INTO "posters" ("name", "description", "price", "year", "vintage", "img_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "REGRET"], ["description", "Hard work rarely pays off."], ["price", 89.0], ["year", 2018], ["vintage", true], ["img_url", "https://plus.unsplash.com/premium_photo-1661293818249-fddbddf07a5d"], ["created_at", "2024-10-22 21:31:16.157574"], ["updated_at", "2024-10-22 21:31:16.157574"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPoster Create (0.2ms)[0m  [1m[32mINSERT INTO "posters" ("name", "description", "price", "year", "vintage", "img_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "FAILURE"], ["description", "The key to success is knowing when to give up."], ["price", 72.5], ["year", 2020], ["vintage", false], ["img_url", "https://plus.unsplash.com/premium_photo-1661293818249-fddbddf07a5d"], ["created_at", "2024-10-22 21:31:16.160815"], ["updated_at", "2024-10-22 21:31:16.160815"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPoster Create (0.2ms)[0m  [1m[32mINSERT INTO "posters" ("name", "description", "price", "year", "vintage", "img_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "DESPAIR"], ["description", "Why try, when you can fail spectacularly?"], ["price", 65.99], ["year", 2015], ["vintage", true], ["img_url", "https://plus.unsplash.com/premium_photo-1661293818249-fddbddf07a5d"], ["created_at", "2024-10-22 21:31:16.161305"], ["updated_at", "2024-10-22 21:31:16.161305"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/api/v1/posters" for 127.0.0.1 at 2024-10-22 15:31:16 -0600
+Processing by Api::V1::PostersController#index as HTML
+  [1m[36mPoster Load (0.2ms)[0m  [1m[34mSELECT "posters".* FROM "posters"[0m
+Completed 200 OK in 6ms (Views: 0.5ms | ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 0.1ms)
+  [1m[36mTRANSACTION (1.9ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPoster Create (0.3ms)[0m  [1m[32mINSERT INTO "posters" ("name", "description", "price", "year", "vintage", "img_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "REGRET"], ["description", "Hard work rarely pays off."], ["price", 89.0], ["year", 2018], ["vintage", true], ["img_url", "https://plus.unsplash.com/premium_photo-1661293818249-fddbddf07a5d"], ["created_at", "2024-10-22 21:31:16.176451"], ["updated_at", "2024-10-22 21:31:16.176451"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.4ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "schema_sha1"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPoster Create (0.6ms)[0m  [1m[32mINSERT INTO "posters" ("name", "description", "price", "year", "vintage", "img_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "REGRET"], ["description", "Hard work rarely pays off."], ["price", 89.0], ["year", 2018], ["vintage", true], ["img_url", "https://plus.unsplash.com/premium_photo-1661293818249-fddbddf07a5d"], ["created_at", "2024-10-22 21:33:42.870192"], ["updated_at", "2024-10-22 21:33:42.870192"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPoster Create (0.3ms)[0m  [1m[32mINSERT INTO "posters" ("name", "description", "price", "year", "vintage", "img_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "FAILURE"], ["description", "The key to success is knowing when to give up."], ["price", 72.5], ["year", 2020], ["vintage", false], ["img_url", "https://plus.unsplash.com/premium_photo-1661293818249-fddbddf07a5d"], ["created_at", "2024-10-22 21:33:42.871551"], ["updated_at", "2024-10-22 21:33:42.871551"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPoster Create (0.2ms)[0m  [1m[32mINSERT INTO "posters" ("name", "description", "price", "year", "vintage", "img_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "DESPAIR"], ["description", "Why try, when you can fail spectacularly?"], ["price", 65.99], ["year", 2015], ["vintage", true], ["img_url", "https://plus.unsplash.com/premium_photo-1661293818249-fddbddf07a5d"], ["created_at", "2024-10-22 21:33:42.872068"], ["updated_at", "2024-10-22 21:33:42.872068"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/api/v1/posters" for 127.0.0.1 at 2024-10-22 15:33:42 -0600
+Processing by Api::V1::PostersController#index as HTML
+  [1m[36mPoster Load (0.3ms)[0m  [1m[34mSELECT "posters".* FROM "posters"[0m
+Completed 200 OK in 6ms (Views: 0.4ms | ActiveRecord: 0.3ms (1 query, 0 cached) | GC: 0.2ms)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPoster Create (0.2ms)[0m  [1m[32mINSERT INTO "posters" ("name", "description", "price", "year", "vintage", "img_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "REGRET"], ["description", "Hard work rarely pays off."], ["price", 89.0], ["year", 2018], ["vintage", true], ["img_url", "https://plus.unsplash.com/premium_photo-1661293818249-fddbddf07a5d"], ["created_at", "2024-10-22 21:33:42.883869"], ["updated_at", "2024-10-22 21:33:42.883869"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.1ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "schema_sha1"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPoster Create (0.5ms)[0m  [1m[32mINSERT INTO "posters" ("name", "description", "price", "year", "vintage", "img_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "REGRET"], ["description", "Hard work rarely pays off."], ["price", 89.0], ["year", 2018], ["vintage", true], ["img_url", "https://plus.unsplash.com/premium_photo-1661293818249-fddbddf07a5d"], ["created_at", "2024-10-22 21:35:01.926643"], ["updated_at", "2024-10-22 21:35:01.926643"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPoster Create (0.5ms)[0m  [1m[32mINSERT INTO "posters" ("name", "description", "price", "year", "vintage", "img_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "FAILURE"], ["description", "The key to success is knowing when to give up."], ["price", 72.5], ["year", 2020], ["vintage", false], ["img_url", "https://plus.unsplash.com/premium_photo-1661293818249-fddbddf07a5d"], ["created_at", "2024-10-22 21:35:01.927795"], ["updated_at", "2024-10-22 21:35:01.927795"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPoster Create (0.2ms)[0m  [1m[32mINSERT INTO "posters" ("name", "description", "price", "year", "vintage", "img_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "DESPAIR"], ["description", "Why try, when you can fail spectacularly?"], ["price", 65.99], ["year", 2015], ["vintage", true], ["img_url", "https://plus.unsplash.com/premium_photo-1661293818249-fddbddf07a5d"], ["created_at", "2024-10-22 21:35:01.928556"], ["updated_at", "2024-10-22 21:35:01.928556"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/api/v1/posters" for 127.0.0.1 at 2024-10-22 15:35:01 -0600
+Processing by Api::V1::PostersController#index as HTML
+  [1m[36mPoster Load (0.3ms)[0m  [1m[34mSELECT "posters".* FROM "posters"[0m
+Completed 200 OK in 6ms (Views: 0.4ms | ActiveRecord: 0.3ms (1 query, 0 cached) | GC: 0.2ms)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPoster Create (0.2ms)[0m  [1m[32mINSERT INTO "posters" ("name", "description", "price", "year", "vintage", "img_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "REGRET"], ["description", "Hard work rarely pays off."], ["price", 89.0], ["year", 2018], ["vintage", true], ["img_url", "https://plus.unsplash.com/premium_photo-1661293818249-fddbddf07a5d"], ["created_at", "2024-10-22 21:35:01.939614"], ["updated_at", "2024-10-22 21:35:01.939614"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/api/v1/posters/33" for 127.0.0.1 at 2024-10-22 15:35:01 -0600
+  
+ActionController::RoutingError (No route matches [GET] "/api/v1/posters/33"):
+  
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.9ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "schema_sha1"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPoster Create (0.7ms)[0m  [1m[32mINSERT INTO "posters" ("name", "description", "price", "year", "vintage", "img_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "REGRET"], ["description", "Hard work rarely pays off."], ["price", 89.0], ["year", 2018], ["vintage", true], ["img_url", "https://plus.unsplash.com/premium_photo-1661293818249-fddbddf07a5d"], ["created_at", "2024-10-22 21:36:25.284039"], ["updated_at", "2024-10-22 21:36:25.284039"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPoster Create (0.2ms)[0m  [1m[32mINSERT INTO "posters" ("name", "description", "price", "year", "vintage", "img_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "FAILURE"], ["description", "The key to success is knowing when to give up."], ["price", 72.5], ["year", 2020], ["vintage", false], ["img_url", "https://plus.unsplash.com/premium_photo-1661293818249-fddbddf07a5d"], ["created_at", "2024-10-22 21:36:25.285386"], ["updated_at", "2024-10-22 21:36:25.285386"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPoster Create (0.2ms)[0m  [1m[32mINSERT INTO "posters" ("name", "description", "price", "year", "vintage", "img_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "DESPAIR"], ["description", "Why try, when you can fail spectacularly?"], ["price", 65.99], ["year", 2015], ["vintage", true], ["img_url", "https://plus.unsplash.com/premium_photo-1661293818249-fddbddf07a5d"], ["created_at", "2024-10-22 21:36:25.285824"], ["updated_at", "2024-10-22 21:36:25.285824"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/api/v1/posters" for 127.0.0.1 at 2024-10-22 15:36:25 -0600
+Processing by Api::V1::PostersController#index as HTML
+  [1m[36mPoster Load (0.3ms)[0m  [1m[34mSELECT "posters".* FROM "posters"[0m
+Completed 200 OK in 5ms (Views: 0.4ms | ActiveRecord: 0.3ms (1 query, 0 cached) | GC: 0.3ms)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPoster Create (0.2ms)[0m  [1m[32mINSERT INTO "posters" ("name", "description", "price", "year", "vintage", "img_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "REGRET"], ["description", "Hard work rarely pays off."], ["price", 89.0], ["year", 2018], ["vintage", true], ["img_url", "https://plus.unsplash.com/premium_photo-1661293818249-fddbddf07a5d"], ["created_at", "2024-10-22 21:36:25.296952"], ["updated_at", "2024-10-22 21:36:25.296952"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/api/v1/posters/37" for 127.0.0.1 at 2024-10-22 15:36:25 -0600
+  
+ActionController::RoutingError (No route matches [GET] "/api/v1/posters/37"):
+  
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.9ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "schema_sha1"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPoster Create (0.5ms)[0m  [1m[32mINSERT INTO "posters" ("name", "description", "price", "year", "vintage", "img_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "REGRET"], ["description", "Hard work rarely pays off."], ["price", 89.0], ["year", 2018], ["vintage", true], ["img_url", "https://plus.unsplash.com/premium_photo-1661293818249-fddbddf07a5d"], ["created_at", "2024-10-22 21:36:39.300442"], ["updated_at", "2024-10-22 21:36:39.300442"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPoster Create (0.2ms)[0m  [1m[32mINSERT INTO "posters" ("name", "description", "price", "year", "vintage", "img_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "FAILURE"], ["description", "The key to success is knowing when to give up."], ["price", 72.5], ["year", 2020], ["vintage", false], ["img_url", "https://plus.unsplash.com/premium_photo-1661293818249-fddbddf07a5d"], ["created_at", "2024-10-22 21:36:39.301548"], ["updated_at", "2024-10-22 21:36:39.301548"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPoster Create (0.2ms)[0m  [1m[32mINSERT INTO "posters" ("name", "description", "price", "year", "vintage", "img_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "DESPAIR"], ["description", "Why try, when you can fail spectacularly?"], ["price", 65.99], ["year", 2015], ["vintage", true], ["img_url", "https://plus.unsplash.com/premium_photo-1661293818249-fddbddf07a5d"], ["created_at", "2024-10-22 21:36:39.301997"], ["updated_at", "2024-10-22 21:36:39.301997"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/api/v1/posters" for 127.0.0.1 at 2024-10-22 15:36:39 -0600
+Processing by Api::V1::PostersController#index as HTML
+  [1m[36mPoster Load (0.3ms)[0m  [1m[34mSELECT "posters".* FROM "posters"[0m
+Completed 200 OK in 5ms (Views: 0.4ms | ActiveRecord: 0.3ms (1 query, 0 cached) | GC: 0.1ms)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPoster Create (0.2ms)[0m  [1m[32mINSERT INTO "posters" ("name", "description", "price", "year", "vintage", "img_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "REGRET"], ["description", "Hard work rarely pays off."], ["price", 89.0], ["year", 2018], ["vintage", true], ["img_url", "https://plus.unsplash.com/premium_photo-1661293818249-fddbddf07a5d"], ["created_at", "2024-10-22 21:36:39.311873"], ["updated_at", "2024-10-22 21:36:39.311873"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/api/v1/posters/41" for 127.0.0.1 at 2024-10-22 15:36:39 -0600
+  
+ActionController::RoutingError (No route matches [GET] "/api/v1/posters/41"):
+  
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.8ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "schema_sha1"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPoster Create (1.2ms)[0m  [1m[32mINSERT INTO "posters" ("name", "description", "price", "year", "vintage", "img_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "REGRET"], ["description", "Hard work rarely pays off."], ["price", 89.0], ["year", 2018], ["vintage", true], ["img_url", "https://plus.unsplash.com/premium_photo-1661293818249-fddbddf07a5d"], ["created_at", "2024-10-22 21:41:49.857569"], ["updated_at", "2024-10-22 21:41:49.857569"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPoster Create (0.2ms)[0m  [1m[32mINSERT INTO "posters" ("name", "description", "price", "year", "vintage", "img_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "FAILURE"], ["description", "The key to success is knowing when to give up."], ["price", 72.5], ["year", 2020], ["vintage", false], ["img_url", "https://plus.unsplash.com/premium_photo-1661293818249-fddbddf07a5d"], ["created_at", "2024-10-22 21:41:49.859350"], ["updated_at", "2024-10-22 21:41:49.859350"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPoster Create (0.2ms)[0m  [1m[32mINSERT INTO "posters" ("name", "description", "price", "year", "vintage", "img_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "DESPAIR"], ["description", "Why try, when you can fail spectacularly?"], ["price", 65.99], ["year", 2015], ["vintage", true], ["img_url", "https://plus.unsplash.com/premium_photo-1661293818249-fddbddf07a5d"], ["created_at", "2024-10-22 21:41:49.859840"], ["updated_at", "2024-10-22 21:41:49.859840"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/api/v1/posters" for 127.0.0.1 at 2024-10-22 15:41:49 -0600
+Processing by Api::V1::PostersController#index as HTML
+  [1m[36mPoster Load (0.3ms)[0m  [1m[34mSELECT "posters".* FROM "posters"[0m
+Completed 200 OK in 5ms (Views: 0.4ms | ActiveRecord: 0.3ms (1 query, 0 cached) | GC: 0.2ms)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPoster Create (0.2ms)[0m  [1m[32mINSERT INTO "posters" ("name", "description", "price", "year", "vintage", "img_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "REGRET"], ["description", "Hard work rarely pays off."], ["price", 89.0], ["year", 2018], ["vintage", true], ["img_url", "https://plus.unsplash.com/premium_photo-1661293818249-fddbddf07a5d"], ["created_at", "2024-10-22 21:41:49.870848"], ["updated_at", "2024-10-22 21:41:49.870848"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/api/v1/posters/45" for 127.0.0.1 at 2024-10-22 15:41:49 -0600
+Processing by Api::V1::PostersController#show as HTML
+  Parameters: {"id"=>"45"}
+  [1m[36mPoster Load (0.1ms)[0m  [1m[34mSELECT "posters".* FROM "posters" WHERE "posters"."id" = $1 LIMIT $2[0m  [["id", 45], ["LIMIT", 1]]
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 0.0ms)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
