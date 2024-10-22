@@ -63,6 +63,7 @@ describe "api" do
   
   end
 
+
   it "shows posters by id" do
 
     id = Poster.create(
@@ -102,5 +103,31 @@ describe "api" do
     expect(poster[:img_url]).to be_a(String) 
   end
 
+
+
+  it "can create a new poster" do
+    poster_params = {name: "FAILURE",
+    description: "The key to success is knowing when to give up.",
+    price: 72.50,
+    year: 2020,
+    vintage: false,
+    img_url: "https://plus.unsplash.com/premium_photo-1661293818249-fddbddf07a5d"
+    }
+
+    headers = {"CONTENT_TYPE" => "application/json"}
+
+    post "/api/v1/posters", headers: headers, params: JSON.generate(poster: poster_params)
+    created_poster = Poster.last
+
+    expect(response).to be_successful
+
+    expect(created_poster.name).to eq(poster_params[:name])
+    expect(created_poster.description).to eq(poster_params[:description])
+    expect(created_poster.price).to eq(poster_params[:price])
+    expect(created_poster.year).to eq(poster_params[:year])
+    expect(created_poster.vintage).to eq(poster_params[:vintage])
+    expect(created_poster.img_url).to eq(poster_params[:img_url])
+    
+  end
 
 end
