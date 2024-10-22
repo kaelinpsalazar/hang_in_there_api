@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   get "up" => "rails/health#show", as: :rails_health_check
 
   get "/api/v1/posters", to: "api/v1/posters#index"
+  post "/api/v1/posters", to: "api/v1/posters#create"
   # Defines the root path route ("/")
   # root "posts#index"
 end
