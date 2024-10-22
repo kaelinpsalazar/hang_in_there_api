@@ -168,6 +168,97 @@ Processing by Api::V1::PostersController#index as */*
 Completed 200 OK in 33ms (Views: 6.3ms | ActiveRecord: 19.1ms (1 query, 0 cached) | GC: 4.8ms)
 
 
+
+Started GET "/api/v1/posters/3" for ::1 at 2024-10-22 15:42:13 -0600
+  [1m[36mActiveRecord::SchemaMigration Load (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::PostersController#show as */*
+  Parameters: {"id"=>"3"}
+  [1m[36mPoster Load (0.4ms)[0m  [1m[34mSELECT "posters".* FROM "posters" WHERE "posters"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/posters_controller.rb:8:in `show'
+Completed 200 OK in 29ms (Views: 0.3ms | ActiveRecord: 20.9ms (1 query, 0 cached) | GC: 1.2ms)
+
+
+Started GET "/api/v1/posters/1" for ::1 at 2024-10-22 15:42:25 -0600
+Processing by Api::V1::PostersController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mPoster Load (0.3ms)[0m  [1m[34mSELECT "posters".* FROM "posters" WHERE "posters"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/posters_controller.rb:8:in `show'
+Completed 200 OK in 6ms (Views: 0.9ms | ActiveRecord: 0.3ms (1 query, 0 cached) | GC: 1.9ms)
+
+
+Started GET "/api/v1/posters/5" for ::1 at 2024-10-22 15:42:32 -0600
+Processing by Api::V1::PostersController#show as */*
+  Parameters: {"id"=>"5"}
+  [1m[36mPoster Load (0.2ms)[0m  [1m[34mSELECT "posters".* FROM "posters" WHERE "posters"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/posters_controller.rb:8:in `show'
+Completed 200 OK in 23ms (Views: 0.2ms | ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 21.0ms)
+
+
+Started GET "/api/v1/posters/15" for ::1 at 2024-10-22 15:42:47 -0600
+Processing by Api::V1::PostersController#show as */*
+  Parameters: {"id"=>"15"}
+  [1m[36mPoster Load (0.3ms)[0m  [1m[34mSELECT "posters".* FROM "posters" WHERE "posters"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/posters_controller.rb:8:in `show'
+Completed 404 Not Found in 3ms (ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Poster with 'id'=15):
+  
+app/controllers/api/v1/posters_controller.rb:8:in `show'
+Started GET "/api/v1/posters/2" for ::1 at 2024-10-22 15:42:51 -0600
+Processing by Api::V1::PostersController#show as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mPoster Load (0.4ms)[0m  [1m[34mSELECT "posters".* FROM "posters" WHERE "posters"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/posters_controller.rb:8:in `show'
+Completed 200 OK in 5ms (Views: 0.6ms | ActiveRecord: 0.4ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/api/v1/posters/" for ::1 at 2024-10-22 15:42:53 -0600
+Processing by Api::V1::PostersController#index as */*
+  [1m[36mPoster Load (0.4ms)[0m  [1m[34mSELECT "posters".* FROM "posters"[0m
+  ↳ app/controllers/api/v1/posters_controller.rb:4:in `index'
+Completed 200 OK in 2ms (Views: 1.9ms | ActiveRecord: 0.3ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/api/v1/posters/3" for ::1 at 2024-10-22 15:42:55 -0600
+Processing by Api::V1::PostersController#show as */*
+  Parameters: {"id"=>"3"}
+  [1m[36mPoster Load (0.4ms)[0m  [1m[34mSELECT "posters".* FROM "posters" WHERE "posters"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/posters_controller.rb:8:in `show'
+Completed 200 OK in 2ms (Views: 0.4ms | ActiveRecord: 0.4ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/api/v1/posters/4" for ::1 at 2024-10-22 15:43:01 -0600
+Processing by Api::V1::PostersController#show as */*
+  Parameters: {"id"=>"4"}
+  [1m[36mPoster Load (0.3ms)[0m  [1m[34mSELECT "posters".* FROM "posters" WHERE "posters"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/posters_controller.rb:8:in `show'
+Completed 200 OK in 3ms (Views: 0.3ms | ActiveRecord: 0.3ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/api/v1/posters/" for ::1 at 2024-10-22 15:43:04 -0600
+Processing by Api::V1::PostersController#index as */*
+  [1m[36mPoster Load (0.5ms)[0m  [1m[34mSELECT "posters".* FROM "posters"[0m
+  ↳ app/controllers/api/v1/posters_controller.rb:4:in `index'
+Completed 200 OK in 3ms (Views: 2.5ms | ActiveRecord: 0.5ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/api/v1/posters/5" for ::1 at 2024-10-22 15:43:05 -0600
+Processing by Api::V1::PostersController#show as */*
+  Parameters: {"id"=>"5"}
+  [1m[36mPoster Load (0.2ms)[0m  [1m[34mSELECT "posters".* FROM "posters" WHERE "posters"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/posters_controller.rb:8:in `show'
+Completed 200 OK in 2ms (Views: 0.3ms | ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/api/v1/posters/6" for ::1 at 2024-10-22 15:43:08 -0600
+Processing by Api::V1::PostersController#show as */*
+  Parameters: {"id"=>"6"}
+  [1m[36mPoster Load (0.5ms)[0m  [1m[34mSELECT "posters".* FROM "posters" WHERE "posters"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/posters_controller.rb:8:in `show'
+Completed 200 OK in 4ms (Views: 0.4ms | ActiveRecord: 0.5ms (1 query, 0 cached) | GC: 0.0ms)
+=======
 Started POST "/api/v1/posters" for ::1 at 2024-10-22 15:17:30 -0600
   [1m[36mActiveRecord::SchemaMigration Load (3.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
 Processing by Api::V1::PostersController#create as */*
@@ -190,5 +281,6 @@ Processing by Api::V1::PostersController#index as */*
   [1m[36mPoster Load (47.2ms)[0m  [1m[34mSELECT "posters".* FROM "posters"[0m
   ↳ app/controllers/api/v1/posters_controller.rb:4:in `index'
 Completed 200 OK in 64ms (Views: 4.3ms | ActiveRecord: 47.1ms (1 query, 0 cached) | GC: 0.0ms)
+
 
 
