@@ -130,4 +130,27 @@ describe "api" do
     
   end
 
+  it "can update an existing poster" do
+    id = Poster.create(
+      name: "FAILURE",
+      description: "The key to success is knowing when to give up.",
+      price: 72.50,
+      year: 2020,
+      vintage: false,
+      img_url: "https://plus.unsplash.com/premium_photo-1661293818249-fddbddf07a5d"
+    ).id
+  
+    previous_name = Poster.last.name 
+    poster_params = { name: "SUCCESS" } 
+    headers = { "CONTENT_TYPE" => "application/json" }
+  
+    patch "/api/v1/posters/#{id}", headers: headers, params: JSON.generate({ poster: poster_params })
+  
+    poster = Poster.find_by(id: id) 
+  
+    expect(response).to be_successful 
+    expect(poster.name).to_not eq(previous_name) 
+    expect(poster.name).to eq("SUCCESS") 
+  end
+
 end
