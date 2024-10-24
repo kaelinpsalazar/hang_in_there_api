@@ -504,3 +504,41 @@ Completed 404 Not Found in 3ms (ActiveRecord: 0.3ms (1 query, 0 cached) | GC: 0.
 ActiveRecord::RecordNotFound (Couldn't find Poster with 'id'=9):
   
 app/controllers/api/v1/posters_controller.rb:8:in `show'
+Started GET "/api/v1/posters" for ::1 at 2024-10-23 14:39:18 -0600
+Processing by Api::V1::PostersController#index as */*
+  Parameters: {"name"=>"Apples", "description"=>"An apple in the morning has the same energy as a cup of coffee.", "price"=>150.0, "year"=>2005, "vintage"=>true, "img_url"=>"https://plus.unsplash.com/premium_photo-1661293818249-fddbddf07a5d", "poster"=>{"name"=>"Apples", "description"=>"An apple in the morning has the same energy as a cup of coffee.", "price"=>150.0, "year"=>2005, "vintage"=>true, "img_url"=>"https://plus.unsplash.com/premium_photo-1661293818249-fddbddf07a5d"}}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 27.3ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+  
+NameError (undefined local variable or method `poster' for #<Api::V1::PostersController:0x00000000017368>):
+  
+app/controllers/api/v1/posters_controller.rb:4:in `index'
+Started GET "/api/v1/posters" for ::1 at 2024-10-23 14:41:38 -0600
+Processing by Api::V1::PostersController#index as */*
+  Parameters: {"name"=>"Apples", "description"=>"An apple in the morning has the same energy as a cup of coffee.", "price"=>150.0, "year"=>2005, "vintage"=>true, "img_url"=>"https://plus.unsplash.com/premium_photo-1661293818249-fddbddf07a5d", "poster"=>{"name"=>"Apples", "description"=>"An apple in the morning has the same energy as a cup of coffee.", "price"=>150.0, "year"=>2005, "vintage"=>true, "img_url"=>"https://plus.unsplash.com/premium_photo-1661293818249-fddbddf07a5d"}}
+  [1m[36mPoster Count (6.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "posters"[0m
+  ↳ app/controllers/api/v1/posters_controller.rb:5:in `index'
+  [1m[36mPoster Load (0.2ms)[0m  [1m[34mSELECT "posters".* FROM "posters"[0m
+  ↳ app/controllers/api/v1/posters_controller.rb:5:in `index'
+Completed 200 OK in 18ms (Views: 3.1ms | ActiveRecord: 48.2ms (2 queries, 0 cached) | GC: 0.1ms)
+
+
+Started GET "/api/v1/posters/3" for ::1 at 2024-10-23 14:43:48 -0600
+Processing by Api::V1::PostersController#show as */*
+  Parameters: {"name"=>"Apples", "description"=>"An apple in the morning has the same energy as a cup of coffee.", "price"=>150.0, "year"=>2005, "vintage"=>true, "img_url"=>"https://plus.unsplash.com/premium_photo-1661293818249-fddbddf07a5d", "id"=>"3", "poster"=>{"name"=>"Apples", "description"=>"An apple in the morning has the same energy as a cup of coffee.", "price"=>150.0, "year"=>2005, "vintage"=>true, "img_url"=>"https://plus.unsplash.com/premium_photo-1661293818249-fddbddf07a5d"}}
+  [1m[36mPoster Load (0.4ms)[0m  [1m[34mSELECT "posters".* FROM "posters" WHERE "posters"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/posters_controller.rb:9:in `show'
+Completed 200 OK in 27ms (Views: 0.5ms | ActiveRecord: 1.6ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/api/v1/posters" for ::1 at 2024-10-23 14:43:55 -0600
+Processing by Api::V1::PostersController#index as */*
+  Parameters: {"name"=>"Apples", "description"=>"An apple in the morning has the same energy as a cup of coffee.", "price"=>150.0, "year"=>2005, "vintage"=>true, "img_url"=>"https://plus.unsplash.com/premium_photo-1661293818249-fddbddf07a5d", "poster"=>{"name"=>"Apples", "description"=>"An apple in the morning has the same energy as a cup of coffee.", "price"=>150.0, "year"=>2005, "vintage"=>true, "img_url"=>"https://plus.unsplash.com/premium_photo-1661293818249-fddbddf07a5d"}}
+  [1m[36mPoster Count (12.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "posters"[0m
+  ↳ app/controllers/api/v1/posters_controller.rb:5:in `index'
+  [1m[36mPoster Load (0.4ms)[0m  [1m[34mSELECT "posters".* FROM "posters"[0m
+  ↳ app/controllers/api/v1/posters_controller.rb:5:in `index'
+Completed 200 OK in 20ms (Views: 2.5ms | ActiveRecord: 12.9ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
