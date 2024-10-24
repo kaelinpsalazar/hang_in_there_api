@@ -123,7 +123,8 @@ describe "api" do
 
     post "/api/v1/posters", headers: headers, params: JSON.generate(poster: poster_params)
     created_poster = Poster.last
-
+    
+    expect(response.code).to eq("201")
     expect(response).to be_successful
 
     expect(created_poster.name).to eq(poster_params[:name])
