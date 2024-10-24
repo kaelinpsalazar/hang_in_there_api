@@ -103,7 +103,22 @@ describe "api" do
     expect(poster[:img_url]).to be_a(String) 
   end
 
+  it "deletes posters by id" do
+    poster = Poster.create(
+      name: "REGRET",
+      description: "Hard work rarely pays off.",
+      price: 89.00,
+      year: 2018,
+      vintage: true,
+      img_url: "https://plus.unsplash.com/premium_photo-1661293818249-fddbddf07a5d"
+    )
+    expect(Poster.count).to eq(1)
 
+    delete "/api/v1/posters/#{poster.id}"
+
+    expect(response).to have_http_status(:no_content)
+    expect(Poster.count).to eq(0)
+  end
 
   it "can create a new poster" do
     poster_params = {name: "FAILURE",
