@@ -1,7 +1,8 @@
 class Api::V1::PostersController < ApplicationController
 
   def index
-    render json: PosterSerializer.new(Poster.all)
+    posters = Poster.all
+    render json: PosterSerializer.new(posters, meta:{count: posters.count})
   end
 
   def show
@@ -20,7 +21,7 @@ class Api::V1::PostersController < ApplicationController
     poster = Poster.find(params[:id])
     poster.destroy
   end
-  
+
   private
 
   def poster_params
