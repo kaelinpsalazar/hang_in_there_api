@@ -22,6 +22,14 @@ describe "api" do
       vintage: true,
       img_url: "https://plus.unsplash.com/premium_photo-1661293818249-fddbddf07a5d"
     )
+    @poster3= Poster.create(
+      name: "STORMS",
+     description: "Why are we doing this?",
+     price: 55.21,
+      year: 2019,
+      vintage: true,
+      img_url: "https://plus.unsplash.com/premium_photo-1661293818249-fddbddf07a5d"
+    )
 
   end
 
@@ -37,10 +45,10 @@ describe "api" do
     # binding.pry
 
   
-    expect(posters[:data].count).to eq(2)
+    expect(posters[:data].count).to eq(3)
 
     expect(posters[:meta]).to be_present
-		expect(posters[:meta][:count]).to eq(2)
+		expect(posters[:meta][:count]).to eq(3)
 
     posters[:data].each do |poster| 
 
@@ -97,61 +105,65 @@ describe "api" do
     expect(poster[:data][:attributes]).to have_key(:img_url) 
     expect(poster[:data][:attributes][:img_url]).to eq(@poster1.img_url)
   end
-
-  it "deletes posters by id" do
-
-    delete "/api/v1/posters/#{@poster1.id}"
-
-    expect(response).to have_http_status(:no_content)
-    
-  end
-
+  
   it "can create a new poster" do
-    poster_params = {name: "SURE",
-    description: "JUST BE COOL",
-    price: 732.50,
-    year: 2025,
-    vintage: false,
-    img_url: "https://plus.unsplash.com/premium_photo-1661293818249-fddbddf07a5d"
-    }
 
+    new_poster_params =
+    { name: "luffy",
+      description: "Pirate King",
+      price: 100.00,
+      year: 1995,
+      vintage: true,
+      img_url: "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.thegreatblight.com%2Fmajor-character%2Frand-althor&psig=AOvVaw2mEU7gb_WgjxRqQ1-B-xSl&ust=1725573628841000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCNjr-eqkqogDFQAAAAAdAAAAABAE"
+
+    }
     headers = {"CONTENT_TYPE" => "application/json"}
 
-    post "/api/v1/posters", headers: headers, params: JSON.generate(poster: poster_params)
-    created_poster = Poster.order(:created_at).last
-    # expect(response.code).to eq("201")
-    expect(response).to be_successful
+    post "/api/v1/posters", headers: headers, params: JSON.generate(poster: new_poster_params) 
 
-    expect(created_poster.name).to eq(poster_params[:name])
-    expect(created_poster.description).to eq(poster_params[:description])
-    expect(created_poster.price).to eq(poster_params[:price])
-    expect(created_poster.year).to eq(poster_params[:year])
-    expect(created_poster.vintage).to eq(poster_params[:vintage])
-    expect(created_poster.img_url).to eq(poster_params[:img_url])
-    
+    created_poster = Poster.last
+    expect(response).to be_successful 
+
+    expect(created_poster.name).to eq(new_poster_params[:name])
+    expect(created_poster.description).to eq(new_poster_params[:description])
+    expect(created_poster.price).to eq(new_poster_params[:price])
+    expect(created_poster.year).to eq(new_poster_params[:year])
+    expect(created_poster.vintage).to eq(new_poster_params[:vintage])
+    expect(created_poster.img_url).to eq(new_poster_params[:img_url])
   end
-
+  
+  
   it "can update an existing poster" do
     poster = Poster.create(
-      name: "WOOOOOOO",
-      description: "SO MUCH FUN",
-      price: 72.50,
-      year: 2020,
-      vintage: false,
-      img_url: "https://plus.unsplash.com/premium_photo-1661293818249-fddbddf07a5d"
-    ).id
-  
-    previous_name = Poster.last.name 
-    poster_params = { name: "SUCCESS" } 
-    headers = { "CONTENT_TYPE" => "application/json" }
-  
-    patch "/api/v1/posters/#{id}", headers: headers, params: JSON.generate({ poster: poster_params })
-  
-    poster = Poster.find_by(id: id) 
-  
-    expect(response).to be_successful 
-    expect(poster.name).to_not eq(previous_name) 
-    expect(poster.name).to eq("SUCCESS") 
-  end
+        name: "WOOOOOOO",
+        description: "SO MUCH FUN",
+        price: 72.50,
+        year: 2020,
+        vintage: false,
+        img_url: "https://plus.unsplash.com/premium_photo-1661293818249-fddbddf07a5d"
+      )
+    
+      previous_name = poster.name 
+      poster_params = { name: "SUCCESS" } 
+      headers = { "CONTENT_TYPE" => "application/json" }
+    
+      patch "/api/v1/posters/#{poster.id}", headers: headers, params: JSON.generate({ poster: poster_params })
 
-end
+      
+    
+      changed_poster = Poster.find_by(id: poster.id) 
+    
+      expect(response).to be_successful 
+      expect(changed_poster.name).to_not eq(previous_name) 
+      expect(changed_poster.name).to eq("SUCCESS") 
+    end
+    
+    it "deletes posters by id" do
+  
+      delete "/api/v1/posters/#{@poster1.id}"
+  
+      expect(response).to have_http_status(:no_content)
+      expect { Poster.find(@poster1.id) }.to raise_error(ActiveRecord::RecordNotFound)
+      
+    end
+  end

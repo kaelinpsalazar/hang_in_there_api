@@ -4,7 +4,6 @@ class Poster < ApplicationRecord
   validates :description, presence: true
   validates :year, presence: true, numericality: {only_integer: true}
   validates :price, presence: true, numericality: {only_float: true}
-  validates :vintage, presence: true
 
   def self.search(params)
     posters = Poster.all
@@ -15,6 +14,7 @@ class Poster < ApplicationRecord
         posters= posters.order(created_at: :desc)
       end
     end
+
     if params[:min_price].present?
       posters = posters.where('price >= ?',params[:min_price].to_f)
     end
