@@ -7361,3 +7361,303 @@ Processing by Api::V1::PostersController#destroy as HTML
 Completed 204 No Content in 1ms (ActiveRecord: 0.3ms (2 queries, 0 cached) | GC: 0.0ms)
   [1m[36mPoster Load (0.1ms)[0m  [1m[34mSELECT "posters".* FROM "posters" WHERE "posters"."id" = $1 LIMIT $2[0m  [["id", 323], ["LIMIT", 1]]
   [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.6ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "schema_sha1"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPoster Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "posters" WHERE "posters"."name" = $1 LIMIT $2[0m  [["name", ""], ["LIMIT", 1]]
+  [1m[36mPoster Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "posters" WHERE "posters"."name" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPoster Load (0.3ms)[0m  [1m[34mSELECT "posters".* FROM "posters" ORDER BY "posters"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPoster Create (1.1ms)[0m  [1m[32mINSERT INTO "posters" ("name", "description", "price", "year", "vintage", "img_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", nil], ["description", nil], ["price", nil], ["year", nil], ["vintage", nil], ["img_url", nil], ["created_at", "2024-10-25 16:10:49.169479"], ["updated_at", "2024-10-25 16:10:49.169479"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPoster Update (0.4ms)[0m  [1m[33mUPDATE "posters" SET "name" = $1, "updated_at" = $2 WHERE "posters"."id" = $3[0m  [["name", "dummy value"], ["updated_at", "2024-10-25 16:10:49.171129"], ["id", 326]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mPoster Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "posters" WHERE "posters"."name" = $1 LIMIT $2[0m  [["name", "dummy value"], ["LIMIT", 1]]
+  [1m[36mPoster Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "posters" WHERE "posters"."name" = $1 LIMIT $2[0m  [["name", "DUMMY VALUE"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPoster Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "posters" WHERE "posters"."name" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mPoster Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "posters" WHERE "posters"."name" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPoster Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "posters" WHERE "posters"."name" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPoster Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "posters" WHERE "posters"."name" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPoster Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "posters" WHERE "posters"."name" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPoster Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "posters" WHERE "posters"."name" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPoster Load (0.1ms)[0m  [1m[34mSELECT "posters".* FROM "posters"[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPoster Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "posters" WHERE "posters"."name" = $1 LIMIT $2[0m  [["name", "REGRET"], ["LIMIT", 1]]
+  [1m[36mPoster Create (0.2ms)[0m  [1m[32mINSERT INTO "posters" ("name", "description", "price", "year", "vintage", "img_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "REGRET"], ["description", "Hard work rarely pays off."], ["price", 89.0], ["year", 2018], ["vintage", true], ["img_url", "https://plus.unsplash.com/premium_photo-1661293818249-fddbddf07a5d"], ["created_at", "2024-10-25 16:10:49.180683"], ["updated_at", "2024-10-25 16:10:49.180683"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPoster Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "posters" WHERE "posters"."name" = $1 LIMIT $2[0m  [["name", "DESPAIR"], ["LIMIT", 1]]
+  [1m[36mPoster Create (0.1ms)[0m  [1m[32mINSERT INTO "posters" ("name", "description", "price", "year", "vintage", "img_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "DESPAIR"], ["description", "Why try, when you can fail spectacularly?"], ["price", 65.99], ["year", 2015], ["vintage", true], ["img_url", "https://plus.unsplash.com/premium_photo-1661293818249-fddbddf07a5d"], ["created_at", "2024-10-25 16:10:49.181506"], ["updated_at", "2024-10-25 16:10:49.181506"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPoster Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "posters" WHERE "posters"."name" = $1 LIMIT $2[0m  [["name", "STORMS"], ["LIMIT", 1]]
+  [1m[36mPoster Create (0.1ms)[0m  [1m[32mINSERT INTO "posters" ("name", "description", "price", "year", "vintage", "img_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "STORMS"], ["description", "Why are we doing this?"], ["price", 55.21], ["year", 2019], ["vintage", true], ["img_url", "https://plus.unsplash.com/premium_photo-1661293818249-fddbddf07a5d"], ["created_at", "2024-10-25 16:10:49.182202"], ["updated_at", "2024-10-25 16:10:49.182202"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/api/v1/posters" for 127.0.0.1 at 2024-10-25 10:10:49 -0600
+Processing by Api::V1::PostersController#index as HTML
+  [1m[36mPoster Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "posters"[0m
+  [1m[36mPoster Load (0.1ms)[0m  [1m[34mSELECT "posters".* FROM "posters"[0m
+Completed 200 OK in 4ms (Views: 0.4ms | ActiveRecord: 0.5ms (2 queries, 0 cached) | GC: 0.0ms)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPoster Load (0.1ms)[0m  [1m[34mSELECT "posters".* FROM "posters"[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPoster Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "posters" WHERE "posters"."name" = $1 LIMIT $2[0m  [["name", "REGRET"], ["LIMIT", 1]]
+  [1m[36mPoster Create (0.1ms)[0m  [1m[32mINSERT INTO "posters" ("name", "description", "price", "year", "vintage", "img_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "REGRET"], ["description", "Hard work rarely pays off."], ["price", 89.0], ["year", 2018], ["vintage", true], ["img_url", "https://plus.unsplash.com/premium_photo-1661293818249-fddbddf07a5d"], ["created_at", "2024-10-25 16:10:49.194940"], ["updated_at", "2024-10-25 16:10:49.194940"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPoster Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "posters" WHERE "posters"."name" = $1 LIMIT $2[0m  [["name", "DESPAIR"], ["LIMIT", 1]]
+  [1m[36mPoster Create (0.1ms)[0m  [1m[32mINSERT INTO "posters" ("name", "description", "price", "year", "vintage", "img_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "DESPAIR"], ["description", "Why try, when you can fail spectacularly?"], ["price", 65.99], ["year", 2015], ["vintage", true], ["img_url", "https://plus.unsplash.com/premium_photo-1661293818249-fddbddf07a5d"], ["created_at", "2024-10-25 16:10:49.195767"], ["updated_at", "2024-10-25 16:10:49.195767"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPoster Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "posters" WHERE "posters"."name" = $1 LIMIT $2[0m  [["name", "STORMS"], ["LIMIT", 1]]
+  [1m[36mPoster Create (0.1ms)[0m  [1m[32mINSERT INTO "posters" ("name", "description", "price", "year", "vintage", "img_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "STORMS"], ["description", "Why are we doing this?"], ["price", 55.21], ["year", 2019], ["vintage", true], ["img_url", "https://plus.unsplash.com/premium_photo-1661293818249-fddbddf07a5d"], ["created_at", "2024-10-25 16:10:49.196437"], ["updated_at", "2024-10-25 16:10:49.196437"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/api/v1/posters/330" for 127.0.0.1 at 2024-10-25 10:10:49 -0600
+Processing by Api::V1::PostersController#show as HTML
+  Parameters: {"id"=>"330"}
+  [1m[36mPoster Load (0.1ms)[0m  [1m[34mSELECT "posters".* FROM "posters" WHERE "posters"."id" = $1 LIMIT $2[0m  [["id", 330], ["LIMIT", 1]]
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.0ms)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPoster Load (0.1ms)[0m  [1m[34mSELECT "posters".* FROM "posters"[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPoster Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "posters" WHERE "posters"."name" = $1 LIMIT $2[0m  [["name", "REGRET"], ["LIMIT", 1]]
+  [1m[36mPoster Create (0.1ms)[0m  [1m[32mINSERT INTO "posters" ("name", "description", "price", "year", "vintage", "img_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "REGRET"], ["description", "Hard work rarely pays off."], ["price", 89.0], ["year", 2018], ["vintage", true], ["img_url", "https://plus.unsplash.com/premium_photo-1661293818249-fddbddf07a5d"], ["created_at", "2024-10-25 16:10:49.199290"], ["updated_at", "2024-10-25 16:10:49.199290"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPoster Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "posters" WHERE "posters"."name" = $1 LIMIT $2[0m  [["name", "DESPAIR"], ["LIMIT", 1]]
+  [1m[36mPoster Create (0.1ms)[0m  [1m[32mINSERT INTO "posters" ("name", "description", "price", "year", "vintage", "img_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "DESPAIR"], ["description", "Why try, when you can fail spectacularly?"], ["price", 65.99], ["year", 2015], ["vintage", true], ["img_url", "https://plus.unsplash.com/premium_photo-1661293818249-fddbddf07a5d"], ["created_at", "2024-10-25 16:10:49.200043"], ["updated_at", "2024-10-25 16:10:49.200043"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPoster Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "posters" WHERE "posters"."name" = $1 LIMIT $2[0m  [["name", "STORMS"], ["LIMIT", 1]]
+  [1m[36mPoster Create (0.1ms)[0m  [1m[32mINSERT INTO "posters" ("name", "description", "price", "year", "vintage", "img_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "STORMS"], ["description", "Why are we doing this?"], ["price", 55.21], ["year", 2019], ["vintage", true], ["img_url", "https://plus.unsplash.com/premium_photo-1661293818249-fddbddf07a5d"], ["created_at", "2024-10-25 16:10:49.200666"], ["updated_at", "2024-10-25 16:10:49.200666"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started POST "/api/v1/posters" for 127.0.0.1 at 2024-10-25 10:10:49 -0600
+Processing by Api::V1::PostersController#create as HTML
+  Parameters: {"poster"=>{"name"=>"luffy", "description"=>"Pirate King", "price"=>100.0, "year"=>1995, "vintage"=>true, "img_url"=>"https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.thegreatblight.com%2Fmajor-character%2Frand-althor&psig=AOvVaw2mEU7gb_WgjxRqQ1-B-xSl&ust=1725573628841000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCNjr-eqkqogDFQAAAAAdAAAAABAE"}}
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPoster Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "posters" WHERE "posters"."name" = $1 LIMIT $2[0m  [["name", "luffy"], ["LIMIT", 1]]
+  [1m[36mPoster Create (0.1ms)[0m  [1m[32mINSERT INTO "posters" ("name", "description", "price", "year", "vintage", "img_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "luffy"], ["description", "Pirate King"], ["price", 100.0], ["year", 1995], ["vintage", true], ["img_url", "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.thegreatblight.com%2Fmajor-character%2Frand-althor&psig=AOvVaw2mEU7gb_WgjxRqQ1-B-xSl&ust=1725573628841000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCNjr-eqkqogDFQAAAAAdAAAAABAE"], ["created_at", "2024-10-25 16:10:49.201895"], ["updated_at", "2024-10-25 16:10:49.201895"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.3ms (2 queries, 0 cached) | GC: 0.0ms)
+  [1m[36mPoster Load (0.1ms)[0m  [1m[34mSELECT "posters".* FROM "posters" ORDER BY "posters"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPoster Load (0.1ms)[0m  [1m[34mSELECT "posters".* FROM "posters"[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPoster Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "posters" WHERE "posters"."name" = $1 LIMIT $2[0m  [["name", "REGRET"], ["LIMIT", 1]]
+  [1m[36mPoster Create (0.1ms)[0m  [1m[32mINSERT INTO "posters" ("name", "description", "price", "year", "vintage", "img_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "REGRET"], ["description", "Hard work rarely pays off."], ["price", 89.0], ["year", 2018], ["vintage", true], ["img_url", "https://plus.unsplash.com/premium_photo-1661293818249-fddbddf07a5d"], ["created_at", "2024-10-25 16:10:49.203755"], ["updated_at", "2024-10-25 16:10:49.203755"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPoster Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "posters" WHERE "posters"."name" = $1 LIMIT $2[0m  [["name", "DESPAIR"], ["LIMIT", 1]]
+  [1m[36mPoster Create (0.1ms)[0m  [1m[32mINSERT INTO "posters" ("name", "description", "price", "year", "vintage", "img_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "DESPAIR"], ["description", "Why try, when you can fail spectacularly?"], ["price", 65.99], ["year", 2015], ["vintage", true], ["img_url", "https://plus.unsplash.com/premium_photo-1661293818249-fddbddf07a5d"], ["created_at", "2024-10-25 16:10:49.204365"], ["updated_at", "2024-10-25 16:10:49.204365"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPoster Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "posters" WHERE "posters"."name" = $1 LIMIT $2[0m  [["name", "STORMS"], ["LIMIT", 1]]
+  [1m[36mPoster Create (0.1ms)[0m  [1m[32mINSERT INTO "posters" ("name", "description", "price", "year", "vintage", "img_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "STORMS"], ["description", "Why are we doing this?"], ["price", 55.21], ["year", 2019], ["vintage", true], ["img_url", "https://plus.unsplash.com/premium_photo-1661293818249-fddbddf07a5d"], ["created_at", "2024-10-25 16:10:49.204976"], ["updated_at", "2024-10-25 16:10:49.204976"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPoster Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "posters" WHERE "posters"."name" = $1 LIMIT $2[0m  [["name", "WOOOOOOO"], ["LIMIT", 1]]
+  [1m[36mPoster Create (0.2ms)[0m  [1m[32mINSERT INTO "posters" ("name", "description", "price", "year", "vintage", "img_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "WOOOOOOO"], ["description", "SO MUCH FUN"], ["price", 72.5], ["year", 2020], ["vintage", false], ["img_url", "https://plus.unsplash.com/premium_photo-1661293818249-fddbddf07a5d"], ["created_at", "2024-10-25 16:10:49.205586"], ["updated_at", "2024-10-25 16:10:49.205586"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started PATCH "/api/v1/posters/340" for 127.0.0.1 at 2024-10-25 10:10:49 -0600
+Processing by Api::V1::PostersController#update as HTML
+  Parameters: {"poster"=>{"name"=>"SUCCESS"}, "id"=>"340"}
+  [1m[36mPoster Load (0.2ms)[0m  [1m[34mSELECT "posters".* FROM "posters" WHERE "posters"."id" = $1 LIMIT $2[0m  [["id", 340], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPoster Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "posters" WHERE "posters"."name" = $1 AND "posters"."id" != $2 LIMIT $3[0m  [["name", "SUCCESS"], ["id", 340], ["LIMIT", 1]]
+  [1m[36mPoster Update (0.2ms)[0m  [1m[33mUPDATE "posters" SET "name" = $1, "updated_at" = $2 WHERE "posters"."id" = $3[0m  [["name", "SUCCESS"], ["updated_at", "2024-10-25 16:10:49.207353"], ["id", 340]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.7ms (3 queries, 0 cached) | GC: 0.0ms)
+  [1m[36mPoster Load (0.1ms)[0m  [1m[34mSELECT "posters".* FROM "posters" WHERE "posters"."id" = $1 LIMIT $2[0m  [["id", 340], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPoster Load (0.1ms)[0m  [1m[34mSELECT "posters".* FROM "posters"[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPoster Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "posters" WHERE "posters"."name" = $1 LIMIT $2[0m  [["name", "REGRET"], ["LIMIT", 1]]
+  [1m[36mPoster Create (0.2ms)[0m  [1m[32mINSERT INTO "posters" ("name", "description", "price", "year", "vintage", "img_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "REGRET"], ["description", "Hard work rarely pays off."], ["price", 89.0], ["year", 2018], ["vintage", true], ["img_url", "https://plus.unsplash.com/premium_photo-1661293818249-fddbddf07a5d"], ["created_at", "2024-10-25 16:10:49.209221"], ["updated_at", "2024-10-25 16:10:49.209221"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPoster Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "posters" WHERE "posters"."name" = $1 LIMIT $2[0m  [["name", "DESPAIR"], ["LIMIT", 1]]
+  [1m[36mPoster Create (0.1ms)[0m  [1m[32mINSERT INTO "posters" ("name", "description", "price", "year", "vintage", "img_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "DESPAIR"], ["description", "Why try, when you can fail spectacularly?"], ["price", 65.99], ["year", 2015], ["vintage", true], ["img_url", "https://plus.unsplash.com/premium_photo-1661293818249-fddbddf07a5d"], ["created_at", "2024-10-25 16:10:49.209993"], ["updated_at", "2024-10-25 16:10:49.209993"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPoster Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "posters" WHERE "posters"."name" = $1 LIMIT $2[0m  [["name", "STORMS"], ["LIMIT", 1]]
+  [1m[36mPoster Create (0.5ms)[0m  [1m[32mINSERT INTO "posters" ("name", "description", "price", "year", "vintage", "img_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "STORMS"], ["description", "Why are we doing this?"], ["price", 55.21], ["year", 2019], ["vintage", true], ["img_url", "https://plus.unsplash.com/premium_photo-1661293818249-fddbddf07a5d"], ["created_at", "2024-10-25 16:10:49.210730"], ["updated_at", "2024-10-25 16:10:49.210730"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started DELETE "/api/v1/posters/341" for 127.0.0.1 at 2024-10-25 10:10:49 -0600
+Processing by Api::V1::PostersController#destroy as HTML
+  Parameters: {"id"=>"341"}
+  [1m[36mPoster Load (0.1ms)[0m  [1m[34mSELECT "posters".* FROM "posters" WHERE "posters"."id" = $1 LIMIT $2[0m  [["id", 341], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPoster Destroy (0.2ms)[0m  [1m[31mDELETE FROM "posters" WHERE "posters"."id" = $1[0m  [["id", 341]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 204 No Content in 1ms (ActiveRecord: 0.3ms (2 queries, 0 cached) | GC: 0.0ms)
+  [1m[36mPoster Load (0.1ms)[0m  [1m[34mSELECT "posters".* FROM "posters" WHERE "posters"."id" = $1 LIMIT $2[0m  [["id", 341], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mActiveRecord::InternalMetadata Load (2.0ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "schema_sha1"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPoster Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "posters" WHERE "posters"."name" = $1 LIMIT $2[0m  [["name", ""], ["LIMIT", 1]]
+  [1m[36mPoster Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "posters" WHERE "posters"."name" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPoster Load (0.2ms)[0m  [1m[34mSELECT "posters".* FROM "posters" ORDER BY "posters"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPoster Create (1.3ms)[0m  [1m[32mINSERT INTO "posters" ("name", "description", "price", "year", "vintage", "img_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", nil], ["description", nil], ["price", nil], ["year", nil], ["vintage", nil], ["img_url", nil], ["created_at", "2024-10-25 16:11:53.232145"], ["updated_at", "2024-10-25 16:11:53.232145"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPoster Update (0.6ms)[0m  [1m[33mUPDATE "posters" SET "name" = $1, "updated_at" = $2 WHERE "posters"."id" = $3[0m  [["name", "dummy value"], ["updated_at", "2024-10-25 16:11:53.234076"], ["id", 344]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mPoster Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "posters" WHERE "posters"."name" = $1 LIMIT $2[0m  [["name", "dummy value"], ["LIMIT", 1]]
+  [1m[36mPoster Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "posters" WHERE "posters"."name" = $1 LIMIT $2[0m  [["name", "DUMMY VALUE"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPoster Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "posters" WHERE "posters"."name" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mPoster Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "posters" WHERE "posters"."name" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPoster Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "posters" WHERE "posters"."name" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPoster Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "posters" WHERE "posters"."name" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPoster Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "posters" WHERE "posters"."name" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPoster Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "posters" WHERE "posters"."name" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPoster Load (0.1ms)[0m  [1m[34mSELECT "posters".* FROM "posters"[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPoster Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "posters" WHERE "posters"."name" = $1 LIMIT $2[0m  [["name", "REGRET"], ["LIMIT", 1]]
+  [1m[36mPoster Create (0.3ms)[0m  [1m[32mINSERT INTO "posters" ("name", "description", "price", "year", "vintage", "img_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "REGRET"], ["description", "Hard work rarely pays off."], ["price", 89.0], ["year", 2018], ["vintage", true], ["img_url", "https://plus.unsplash.com/premium_photo-1661293818249-fddbddf07a5d"], ["created_at", "2024-10-25 16:11:53.244675"], ["updated_at", "2024-10-25 16:11:53.244675"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPoster Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "posters" WHERE "posters"."name" = $1 LIMIT $2[0m  [["name", "DESPAIR"], ["LIMIT", 1]]
+  [1m[36mPoster Create (12.9ms)[0m  [1m[32mINSERT INTO "posters" ("name", "description", "price", "year", "vintage", "img_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "DESPAIR"], ["description", "Why try, when you can fail spectacularly?"], ["price", 65.99], ["year", 2015], ["vintage", true], ["img_url", "https://plus.unsplash.com/premium_photo-1661293818249-fddbddf07a5d"], ["created_at", "2024-10-25 16:11:53.245905"], ["updated_at", "2024-10-25 16:11:53.245905"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPoster Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "posters" WHERE "posters"."name" = $1 LIMIT $2[0m  [["name", "STORMS"], ["LIMIT", 1]]
+  [1m[36mPoster Create (0.4ms)[0m  [1m[32mINSERT INTO "posters" ("name", "description", "price", "year", "vintage", "img_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "STORMS"], ["description", "Why are we doing this?"], ["price", 55.21], ["year", 2019], ["vintage", true], ["img_url", "https://plus.unsplash.com/premium_photo-1661293818249-fddbddf07a5d"], ["created_at", "2024-10-25 16:11:53.260629"], ["updated_at", "2024-10-25 16:11:53.260629"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/api/v1/posters" for 127.0.0.1 at 2024-10-25 10:11:53 -0600
+Processing by Api::V1::PostersController#index as HTML
+  [1m[36mPoster Count (1.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "posters"[0m
+  [1m[36mPoster Load (0.2ms)[0m  [1m[34mSELECT "posters".* FROM "posters"[0m
+Completed 200 OK in 6ms (Views: 0.4ms | ActiveRecord: 1.6ms (2 queries, 0 cached) | GC: 0.0ms)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPoster Load (0.1ms)[0m  [1m[34mSELECT "posters".* FROM "posters"[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPoster Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "posters" WHERE "posters"."name" = $1 LIMIT $2[0m  [["name", "REGRET"], ["LIMIT", 1]]
+  [1m[36mPoster Create (0.2ms)[0m  [1m[32mINSERT INTO "posters" ("name", "description", "price", "year", "vintage", "img_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "REGRET"], ["description", "Hard work rarely pays off."], ["price", 89.0], ["year", 2018], ["vintage", true], ["img_url", "https://plus.unsplash.com/premium_photo-1661293818249-fddbddf07a5d"], ["created_at", "2024-10-25 16:11:53.274821"], ["updated_at", "2024-10-25 16:11:53.274821"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPoster Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "posters" WHERE "posters"."name" = $1 LIMIT $2[0m  [["name", "DESPAIR"], ["LIMIT", 1]]
+  [1m[36mPoster Create (0.2ms)[0m  [1m[32mINSERT INTO "posters" ("name", "description", "price", "year", "vintage", "img_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "DESPAIR"], ["description", "Why try, when you can fail spectacularly?"], ["price", 65.99], ["year", 2015], ["vintage", true], ["img_url", "https://plus.unsplash.com/premium_photo-1661293818249-fddbddf07a5d"], ["created_at", "2024-10-25 16:11:53.275737"], ["updated_at", "2024-10-25 16:11:53.275737"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPoster Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "posters" WHERE "posters"."name" = $1 LIMIT $2[0m  [["name", "STORMS"], ["LIMIT", 1]]
+  [1m[36mPoster Create (0.2ms)[0m  [1m[32mINSERT INTO "posters" ("name", "description", "price", "year", "vintage", "img_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "STORMS"], ["description", "Why are we doing this?"], ["price", 55.21], ["year", 2019], ["vintage", true], ["img_url", "https://plus.unsplash.com/premium_photo-1661293818249-fddbddf07a5d"], ["created_at", "2024-10-25 16:11:53.276521"], ["updated_at", "2024-10-25 16:11:53.276521"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/api/v1/posters/348" for 127.0.0.1 at 2024-10-25 10:11:53 -0600
+Processing by Api::V1::PostersController#show as HTML
+  Parameters: {"id"=>"348"}
+  [1m[36mPoster Load (0.1ms)[0m  [1m[34mSELECT "posters".* FROM "posters" WHERE "posters"."id" = $1 LIMIT $2[0m  [["id", 348], ["LIMIT", 1]]
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.0ms)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPoster Load (0.1ms)[0m  [1m[34mSELECT "posters".* FROM "posters"[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPoster Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "posters" WHERE "posters"."name" = $1 LIMIT $2[0m  [["name", "REGRET"], ["LIMIT", 1]]
+  [1m[36mPoster Create (0.1ms)[0m  [1m[32mINSERT INTO "posters" ("name", "description", "price", "year", "vintage", "img_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "REGRET"], ["description", "Hard work rarely pays off."], ["price", 89.0], ["year", 2018], ["vintage", true], ["img_url", "https://plus.unsplash.com/premium_photo-1661293818249-fddbddf07a5d"], ["created_at", "2024-10-25 16:11:53.278881"], ["updated_at", "2024-10-25 16:11:53.278881"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPoster Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "posters" WHERE "posters"."name" = $1 LIMIT $2[0m  [["name", "DESPAIR"], ["LIMIT", 1]]
+  [1m[36mPoster Create (0.1ms)[0m  [1m[32mINSERT INTO "posters" ("name", "description", "price", "year", "vintage", "img_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "DESPAIR"], ["description", "Why try, when you can fail spectacularly?"], ["price", 65.99], ["year", 2015], ["vintage", true], ["img_url", "https://plus.unsplash.com/premium_photo-1661293818249-fddbddf07a5d"], ["created_at", "2024-10-25 16:11:53.279560"], ["updated_at", "2024-10-25 16:11:53.279560"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPoster Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "posters" WHERE "posters"."name" = $1 LIMIT $2[0m  [["name", "STORMS"], ["LIMIT", 1]]
+  [1m[36mPoster Create (0.1ms)[0m  [1m[32mINSERT INTO "posters" ("name", "description", "price", "year", "vintage", "img_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "STORMS"], ["description", "Why are we doing this?"], ["price", 55.21], ["year", 2019], ["vintage", true], ["img_url", "https://plus.unsplash.com/premium_photo-1661293818249-fddbddf07a5d"], ["created_at", "2024-10-25 16:11:53.280382"], ["updated_at", "2024-10-25 16:11:53.280382"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started POST "/api/v1/posters" for 127.0.0.1 at 2024-10-25 10:11:53 -0600
+Processing by Api::V1::PostersController#create as HTML
+  Parameters: {"poster"=>{"name"=>"luffy", "description"=>"Pirate King", "price"=>100.0, "year"=>1995, "vintage"=>true, "img_url"=>"https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.thegreatblight.com%2Fmajor-character%2Frand-althor&psig=AOvVaw2mEU7gb_WgjxRqQ1-B-xSl&ust=1725573628841000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCNjr-eqkqogDFQAAAAAdAAAAABAE"}}
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPoster Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "posters" WHERE "posters"."name" = $1 LIMIT $2[0m  [["name", "luffy"], ["LIMIT", 1]]
+  [1m[36mPoster Create (0.2ms)[0m  [1m[32mINSERT INTO "posters" ("name", "description", "price", "year", "vintage", "img_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "luffy"], ["description", "Pirate King"], ["price", 100.0], ["year", 1995], ["vintage", true], ["img_url", "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.thegreatblight.com%2Fmajor-character%2Frand-althor&psig=AOvVaw2mEU7gb_WgjxRqQ1-B-xSl&ust=1725573628841000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCNjr-eqkqogDFQAAAAAdAAAAABAE"], ["created_at", "2024-10-25 16:11:53.281685"], ["updated_at", "2024-10-25 16:11:53.281685"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.4ms (2 queries, 0 cached) | GC: 0.0ms)
+  [1m[36mPoster Load (0.1ms)[0m  [1m[34mSELECT "posters".* FROM "posters" ORDER BY "posters"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPoster Load (0.1ms)[0m  [1m[34mSELECT "posters".* FROM "posters"[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPoster Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "posters" WHERE "posters"."name" = $1 LIMIT $2[0m  [["name", "REGRET"], ["LIMIT", 1]]
+  [1m[36mPoster Create (0.2ms)[0m  [1m[32mINSERT INTO "posters" ("name", "description", "price", "year", "vintage", "img_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "REGRET"], ["description", "Hard work rarely pays off."], ["price", 89.0], ["year", 2018], ["vintage", true], ["img_url", "https://plus.unsplash.com/premium_photo-1661293818249-fddbddf07a5d"], ["created_at", "2024-10-25 16:11:53.283724"], ["updated_at", "2024-10-25 16:11:53.283724"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPoster Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "posters" WHERE "posters"."name" = $1 LIMIT $2[0m  [["name", "DESPAIR"], ["LIMIT", 1]]
+  [1m[36mPoster Create (0.2ms)[0m  [1m[32mINSERT INTO "posters" ("name", "description", "price", "year", "vintage", "img_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "DESPAIR"], ["description", "Why try, when you can fail spectacularly?"], ["price", 65.99], ["year", 2015], ["vintage", true], ["img_url", "https://plus.unsplash.com/premium_photo-1661293818249-fddbddf07a5d"], ["created_at", "2024-10-25 16:11:53.284498"], ["updated_at", "2024-10-25 16:11:53.284498"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPoster Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "posters" WHERE "posters"."name" = $1 LIMIT $2[0m  [["name", "STORMS"], ["LIMIT", 1]]
+  [1m[36mPoster Create (0.2ms)[0m  [1m[32mINSERT INTO "posters" ("name", "description", "price", "year", "vintage", "img_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "STORMS"], ["description", "Why are we doing this?"], ["price", 55.21], ["year", 2019], ["vintage", true], ["img_url", "https://plus.unsplash.com/premium_photo-1661293818249-fddbddf07a5d"], ["created_at", "2024-10-25 16:11:53.285277"], ["updated_at", "2024-10-25 16:11:53.285277"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPoster Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "posters" WHERE "posters"."name" = $1 LIMIT $2[0m  [["name", "WOOOOOOO"], ["LIMIT", 1]]
+  [1m[36mPoster Create (0.2ms)[0m  [1m[32mINSERT INTO "posters" ("name", "description", "price", "year", "vintage", "img_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "WOOOOOOO"], ["description", "SO MUCH FUN"], ["price", 72.5], ["year", 2020], ["vintage", false], ["img_url", "https://plus.unsplash.com/premium_photo-1661293818249-fddbddf07a5d"], ["created_at", "2024-10-25 16:11:53.286060"], ["updated_at", "2024-10-25 16:11:53.286060"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started PATCH "/api/v1/posters/358" for 127.0.0.1 at 2024-10-25 10:11:53 -0600
+Processing by Api::V1::PostersController#update as HTML
+  Parameters: {"poster"=>{"name"=>"SUCCESS"}, "id"=>"358"}
+  [1m[36mPoster Load (0.1ms)[0m  [1m[34mSELECT "posters".* FROM "posters" WHERE "posters"."id" = $1 LIMIT $2[0m  [["id", 358], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPoster Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "posters" WHERE "posters"."name" = $1 AND "posters"."id" != $2 LIMIT $3[0m  [["name", "SUCCESS"], ["id", 358], ["LIMIT", 1]]
+  [1m[36mPoster Update (0.2ms)[0m  [1m[33mUPDATE "posters" SET "name" = $1, "updated_at" = $2 WHERE "posters"."id" = $3[0m  [["name", "SUCCESS"], ["updated_at", "2024-10-25 16:11:53.287580"], ["id", 358]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.6ms (3 queries, 0 cached) | GC: 0.0ms)
+  [1m[36mPoster Load (0.1ms)[0m  [1m[34mSELECT "posters".* FROM "posters" WHERE "posters"."id" = $1 LIMIT $2[0m  [["id", 358], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPoster Load (0.1ms)[0m  [1m[34mSELECT "posters".* FROM "posters"[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPoster Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "posters" WHERE "posters"."name" = $1 LIMIT $2[0m  [["name", "REGRET"], ["LIMIT", 1]]
+  [1m[36mPoster Create (0.2ms)[0m  [1m[32mINSERT INTO "posters" ("name", "description", "price", "year", "vintage", "img_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "REGRET"], ["description", "Hard work rarely pays off."], ["price", 89.0], ["year", 2018], ["vintage", true], ["img_url", "https://plus.unsplash.com/premium_photo-1661293818249-fddbddf07a5d"], ["created_at", "2024-10-25 16:11:53.289270"], ["updated_at", "2024-10-25 16:11:53.289270"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPoster Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "posters" WHERE "posters"."name" = $1 LIMIT $2[0m  [["name", "DESPAIR"], ["LIMIT", 1]]
+  [1m[36mPoster Create (0.1ms)[0m  [1m[32mINSERT INTO "posters" ("name", "description", "price", "year", "vintage", "img_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "DESPAIR"], ["description", "Why try, when you can fail spectacularly?"], ["price", 65.99], ["year", 2015], ["vintage", true], ["img_url", "https://plus.unsplash.com/premium_photo-1661293818249-fddbddf07a5d"], ["created_at", "2024-10-25 16:11:53.290076"], ["updated_at", "2024-10-25 16:11:53.290076"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPoster Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "posters" WHERE "posters"."name" = $1 LIMIT $2[0m  [["name", "STORMS"], ["LIMIT", 1]]
+  [1m[36mPoster Create (0.2ms)[0m  [1m[32mINSERT INTO "posters" ("name", "description", "price", "year", "vintage", "img_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "STORMS"], ["description", "Why are we doing this?"], ["price", 55.21], ["year", 2019], ["vintage", true], ["img_url", "https://plus.unsplash.com/premium_photo-1661293818249-fddbddf07a5d"], ["created_at", "2024-10-25 16:11:53.290855"], ["updated_at", "2024-10-25 16:11:53.290855"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started DELETE "/api/v1/posters/359" for 127.0.0.1 at 2024-10-25 10:11:53 -0600
+Processing by Api::V1::PostersController#destroy as HTML
+  Parameters: {"id"=>"359"}
+  [1m[36mPoster Load (0.2ms)[0m  [1m[34mSELECT "posters".* FROM "posters" WHERE "posters"."id" = $1 LIMIT $2[0m  [["id", 359], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPoster Destroy (0.2ms)[0m  [1m[31mDELETE FROM "posters" WHERE "posters"."id" = $1[0m  [["id", 359]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 204 No Content in 1ms (ActiveRecord: 0.4ms (2 queries, 0 cached) | GC: 0.0ms)
+  [1m[36mPoster Load (0.1ms)[0m  [1m[34mSELECT "posters".* FROM "posters" WHERE "posters"."id" = $1 LIMIT $2[0m  [["id", 359], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
