@@ -13,8 +13,13 @@ class Api::V1::PostersController < ApplicationController
     render json: PosterSerializer.new(Poster.create(poster_params))
   end
 
-  def update 
-    render json: PosterSerializer.new(Poster.update(params[:id], poster_params))
+  def update
+    poster = Poster.find(params[:id])
+    if poster.update(poster_params)
+      render json: PosterSerializer.new(poster), status: :ok
+    else
+      render json: { errors: poster.errors.full_messages }, status: :unprocessable_entity
+    end
   end
  
   def destroy
