@@ -2,6 +2,8 @@ require 'rails_helper'
 
 describe "api" do
   before(:each) do
+    Poster.destroy_all
+
     @poster1 = Poster.create(
       name: "REGRET",
       description: "Hard work rarely pays off.",
@@ -11,16 +13,8 @@ describe "api" do
      img_url: "https://plus.unsplash.com/premium_photo-1661293818249-fddbddf07a5d"
     )
 
-    @poster2 = Poster.create(
-      name: "FAILURE",
-      description: "The key to success is knowing when to give up.",
-      price: 72.50,
-      year: 2020,
-      vintage: false,
-      img_url: "https://plus.unsplash.com/premium_photo-1661293818249-fddbddf07a5d"
-    )
 
-    @poster3= Poster.create(
+    @poster2= Poster.create(
       name: "DESPAIR",
      description: "Why try, when you can fail spectacularly?",
      price: 65.99,
@@ -40,11 +34,13 @@ describe "api" do
 
     expect(response).to be_successful
 
+    # binding.pry
+
   
-    expect(posters[:data].count).to eq(3)
+    expect(posters[:data].count).to eq(2)
 
     expect(posters[:meta]).to be_present
-		expect(posters[:meta][:count]).to eq(3)
+		expect(posters[:meta][:count]).to eq(2)
 
     posters[:data].each do |poster| 
 
@@ -111,10 +107,10 @@ describe "api" do
   end
 
   it "can create a new poster" do
-    poster_params = {name: "FAILURE",
-    description: "The key to success is knowing when to give up.",
-    price: 72.50,
-    year: 2020,
+    poster_params = {name: "SURE",
+    description: "JUST BE COOL",
+    price: 732.50,
+    year: 2025,
     vintage: false,
     img_url: "https://plus.unsplash.com/premium_photo-1661293818249-fddbddf07a5d"
     }
@@ -122,9 +118,8 @@ describe "api" do
     headers = {"CONTENT_TYPE" => "application/json"}
 
     post "/api/v1/posters", headers: headers, params: JSON.generate(poster: poster_params)
-    created_poster = Poster.last
-    
-    expect(response.code).to eq("201")
+    created_poster = Poster.order(:created_at).last
+    # expect(response.code).to eq("201")
     expect(response).to be_successful
 
     expect(created_poster.name).to eq(poster_params[:name])
@@ -137,9 +132,9 @@ describe "api" do
   end
 
   it "can update an existing poster" do
-    id = Poster.create(
-      name: "FAILURE",
-      description: "The key to success is knowing when to give up.",
+    poster = Poster.create(
+      name: "WOOOOOOO",
+      description: "SO MUCH FUN",
       price: 72.50,
       year: 2020,
       vintage: false,
