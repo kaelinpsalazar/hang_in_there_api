@@ -6,11 +6,35 @@ class Api::V1::PostersController < ApplicationController
   end
 
   def show
-    render json: PosterSerializer.new(Poster.find(params[:id]))
+    begin
+      render json: PosterSerializer.new(Poster.find(params[:id]))
+    rescue ActiveRecord::RecordNotFound => exception
+      render json: {
+        errors: [
+          {
+            status: "404",
+            message: exception.message
+          }
+        ]
+      }, status: :not_found
+    end
   end
+
   
   def create
-    render json: PosterSerializer.new(Poster.create(poster_params))
+    begin
+      poster = Poster.create!(poster_params) 
+      render json: PosterSerializer.new(poster), status: :created
+    rescue ActiveRecord::RecordInvalid => error
+      render json: {
+        errors: [
+          {
+            "status": "422",
+            "message": error.record.errors.full_messages.join(", ")
+          }
+        ]
+      }, status: :unprocessable_entity 
+    end
   end
 
   def update

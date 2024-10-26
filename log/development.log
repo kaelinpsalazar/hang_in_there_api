@@ -1446,3 +1446,35 @@ Processing by Api::V1::PostersController#index as */*
 Completed 200 OK in 5ms (Views: 2.4ms | ActiveRecord: 0.6ms (2 queries, 0 cached) | GC: 0.0ms)
 
 
+Started GET "/api/v1/posters/123456" for ::1 at 2024-10-26 12:14:14 -0600
+  [1m[36mActiveRecord::SchemaMigration Load (2.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::PostersController#show as */*
+  Parameters: {"id"=>"123456"}
+  [1m[36mPoster Load (1.0ms)[0m  [1m[34mSELECT "posters".* FROM "posters" WHERE "posters"."id" = $1 LIMIT $2[0m  [["id", 123456], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/posters_controller.rb:10:in `show'
+Completed 404 Not Found in 56ms (Views: 0.2ms | ActiveRecord: 45.8ms (1 query, 0 cached) | GC: 1.5ms)
+
+
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPoster Exists? (13.1ms)[0m  [1m[34mSELECT 1 AS one FROM "posters" WHERE "posters"."name" = $1 LIMIT $2[0m  [["name", "WOOOOOOO"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPoster Exists? (3.3ms)[0m  [1m[34mSELECT 1 AS one FROM "posters" WHERE "posters"."name" = $1 LIMIT $2[0m  [["name", "WOOOOOOO"], ["LIMIT", 1]]
+  [1m[36mPoster Create (2.0ms)[0m  [1m[32mINSERT INTO "posters" ("name", "description", "price", "year", "vintage", "img_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "WOOOOOOO"], ["description", "SO MUCH FUN"], ["price", 72.5], ["year", 2020], ["vintage", false], ["img_url", "https://plus.unsplash.com/premium_photo-1661293818249-fddbddf07a5d"], ["created_at", "2024-10-26 18:30:38.859083"], ["updated_at", "2024-10-26 18:30:38.859083"]]
+  [1m[36mTRANSACTION (14.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPoster Exists? (1.0ms)[0m  [1m[34mSELECT 1 AS one FROM "posters" WHERE "posters"."name" = $1 LIMIT $2[0m  [["name", "WOOOOOOO"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+Started POST "/api/v1/posters" for ::1 at 2024-10-26 12:33:50 -0600
+  [1m[36mActiveRecord::SchemaMigration Load (12.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Api::V1::PostersController#create as */*
+  Parameters: {"name"=>"JOKES", "description"=>"It's too lfgdacccctccce tofcccff start now.", "price"=>35.0, "year"=>2023, "vintage"=>false, "img_url"=>"https://unsdfgplash.com/photos/brown-brick-building-with-red-car-parked-on-the-side-mMV6Y0ExyIk", "poster"=>{"name"=>"JOKES", "description"=>"It's too lfgdacccctccce tofcccff start now.", "price"=>35.0, "year"=>2023, "vintage"=>false, "img_url"=>"https://unsdfgplash.com/photos/brown-brick-building-with-red-car-parked-on-the-side-mMV6Y0ExyIk"}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/v1/posters_controller.rb:26:in `create'
+  [1m[36mPoster Exists? (0.8ms)[0m  [1m[34mSELECT 1 AS one FROM "posters" WHERE "posters"."name" = $1 LIMIT $2[0m  [["name", "JOKES"], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/posters_controller.rb:26:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/v1/posters_controller.rb:26:in `create'
+Completed 422 Unprocessable Content in 15ms (Views: 0.2ms | ActiveRecord: 25.1ms (1 query, 0 cached) | GC: 0.7ms)
+
+
