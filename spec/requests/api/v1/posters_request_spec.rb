@@ -121,15 +121,15 @@ describe "api" do
 
     post "/api/v1/posters", headers: headers, params: JSON.generate(poster: new_poster_params) 
 
-    created_poster = Poster.last
+    created_poster = JSON.parse(response.body, symbolize_names: true)
     expect(response).to be_successful 
 
-    expect(created_poster.name).to eq(new_poster_params[:name])
-    expect(created_poster.description).to eq(new_poster_params[:description])
-    expect(created_poster.price).to eq(new_poster_params[:price])
-    expect(created_poster.year).to eq(new_poster_params[:year])
-    expect(created_poster.vintage).to eq(new_poster_params[:vintage])
-    expect(created_poster.img_url).to eq(new_poster_params[:img_url])
+    expect(created_poster[:data][:attributes][:name]).to eq(new_poster_params[:name])
+    expect(created_poster[:data][:attributes][:description]).to eq(new_poster_params[:description])
+    expect(created_poster[:data][:attributes][:price]).to eq(new_poster_params[:price])
+    expect(created_poster[:data][:attributes][:year]).to eq(new_poster_params[:year])
+    expect(created_poster[:data][:attributes][:vintage]).to eq(new_poster_params[:vintage])
+    expect(created_poster[:data][:attributes][:img_url]).to eq(new_poster_params[:img_url])
   end
   
   
@@ -151,11 +151,11 @@ describe "api" do
 
       
     
-      changed_poster = Poster.find_by(id: poster.id) 
+      changed_poster = JSON.parse(response.body, symbolize_names: true) 
     
       expect(response).to be_successful 
-      expect(changed_poster.name).to_not eq(previous_name) 
-      expect(changed_poster.name).to eq("SUCCESS") 
+      expect(changed_poster[:data][:attributes][:name]).to_not eq(previous_name) 
+      expect(changed_poster[:data][:attributes][:name]).to eq("SUCCESS") 
     end
     
     it "deletes posters by id" do
