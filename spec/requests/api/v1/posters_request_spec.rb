@@ -148,8 +148,6 @@ describe "api" do
       headers = { "CONTENT_TYPE" => "application/json" }
     
       patch "/api/v1/posters/#{poster.id}", headers: headers, params: JSON.generate({ poster: poster_params })
-
-      
     
       changed_poster = JSON.parse(response.body, symbolize_names: true) 
     
@@ -166,4 +164,52 @@ describe "api" do
       expect { Poster.find(@poster1.id) }.to raise_error(ActiveRecord::RecordNotFound)
       
     end
+
+    it "will return an error if id doesnt exist" do
+      get "/api/v1/posters/123456"
+
+      expect(response).to_not be_successful
+      expect(response.status).to eq(404)
+
+      data = JSON.parse(response.body, symbolize_names: true)
+
+      expect(data[:errors]).to be_a(Array)
+      expect(data[:errors].first[:status]).to eq("404")
+      expect(data[:errors].first[:message]).to eq("Couldn't find Poster with 'id'=123456")
+
+    end
+
+    it "will return an error when using a duplicate name" do
+      Poster.create!(
+        name: "WOOOOOOO",
+        description: "SO MUCH FUN",
+        price: 72.50,
+        year: 2020,
+        vintage: false,
+        img_url: "https://plus.unsplash.com/premium_photo-1661293818249-fddbddf07a5d"
+      )
+    
+      post "/api/v1/posters", params: {
+        poster: {
+          name: "WOOOOOOO",  
+          description: "Another one",
+          price: 30.00,
+          year: 2020,
+          vintage: false,
+          img_url: "https://plus.unsplash.com/premium_photo-1661293818249-fddbddf07a5d"
+        }
+      }
+    
+      data = JSON.parse(response.body, symbolize_names: true)
+    
+      expect(response).to_not be_successful
+      expect(response.status).to eq(422)
+    
+      expect(data[:errors]).to be_a(Array)
+      expect(data[:errors].first[:status]).to eq("422")
+      expect(data[:errors].first[:message]).to include("Name has already been taken")
+    end
+    
+    
+    
   end
